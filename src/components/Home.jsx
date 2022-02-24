@@ -74,11 +74,9 @@ const Home = () => {
                                     </div>
                                     <div>
                                         <ButtonToolbar className="card-phone-button-toolbar">
-                                            <Button variant="dark">
-                                                <Link to={`/phone-detail/${phone.id}`}
-                                                      style={{textDecoration: "none", color: "inherit"}}> See
-                                                    details</Link>
-                                            </Button>
+                                            <Link to={`/phone-detail/${phone.id}`}>
+                                                <Button variant="dark">See details</Button>
+                                            </Link>
                                             <Button variant="danger">Delete</Button>
                                         </ButtonToolbar>
                                     </div>
