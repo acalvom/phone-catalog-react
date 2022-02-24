@@ -1,8 +1,14 @@
-.card-button-toolbar {
+.card-phone-button-toolbar {
     justify-content: space-between;
 }
 
 .card-phone {
     width: 15em;
     margin: 1em 0.5em;
+}
+
+.card-phone .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
