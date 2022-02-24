@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container} from "react-bootstrap";
 import './Home.css';
 import PhoneList from "./PhoneList";
+import axios from "axios";
 
 const Home = () => {
 
@@ -55,6 +56,14 @@ const Home = () => {
             ram: 6
         },
     ];
+
+    useEffect(() => {
+       const getPhoneList = async () => {
+           const data = await axios.get('/phones');
+           console.log(data);
+       }
+       getPhoneList().then();
+    }, []);
 
     return (
         <Container>
