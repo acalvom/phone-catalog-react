@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, ButtonToolbar, Card, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import './Home.css';
-import {Link} from "react-router-dom";
+import PhoneList from "./PhoneList";
 
 const Home = () => {
 
@@ -59,32 +59,7 @@ const Home = () => {
     return (
         <Container>
             <h1 className="home-header">Phone Catalog</h1>
-            <div className="d-flex flex-wrap justify-content-center">
-                {
-                    phoneList.length > 0 ?
-                        phoneList.map(phone =>
-                            <Card key={phone.id} className="card-phone">
-                                <Card.Img variant="top" src={phone.imageFileName} alt={phone.name}/>
-                                <Card.Body>
-                                    <div className="mb-2">
-                                        <Card.Title>{phone.name}</Card.Title>
-                                        <Card.Subtitle
-                                            className="mb-2 text-warning">{phone.manufacturer}</Card.Subtitle>
-                                        <Card.Text>{phone.price}€</Card.Text>
-                                    </div>
-                                    <div>
-                                        <ButtonToolbar className="card-phone-button-toolbar">
-                                            <Link to={`/phone-detail/${phone.id}`}>
-                                                <Button variant="dark">See details</Button>
-                                            </Link>
-                                            <Button variant="danger">Delete</Button>
-                                        </ButtonToolbar>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        ) : <h5>No phones to show</h5>
-                }
-            </div>
+            {phoneList && <PhoneList phoneList={phoneList}/>}
         </Container>
     );
 };
