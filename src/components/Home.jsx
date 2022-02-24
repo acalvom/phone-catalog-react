@@ -1,104 +1,65 @@
 import React from 'react';
-import {Button, ButtonToolbar, Card, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import './Home.css';
+import PhoneList from "./PhoneList";
 
 const Home = () => {
+
+    const phoneList = [
+        {
+            id: 0,
+            name: "iPhone 7",
+            manufacturer: "Apple",
+            description: "lorem ipsum dolor sit amet consectetur.",
+            color: "black",
+            price: 769,
+            imageFileName: "IPhone_7.png",
+            screen: "4,7 inch IPS",
+            processor: "A10 Fusion",
+            ram: 2
+        },
+        {
+            id: 1,
+            name: "iPhone 13",
+            manufacturer: "Apple",
+            description: "lorem ipsum dolor sit amet consectetur.",
+            color: "red",
+            price: 1030,
+            imageFileName: "IPhone_13.png",
+            screen: "4,7 inch IPS",
+            processor: "A10 Fusion",
+            ram: 2
+        },
+        {
+            id: 2,
+            name: "Xiaomi Mi 11 Pro",
+            manufacturer: "Xiaomi",
+            description: "lorem ipsum dolor sit amet consectetur.",
+            color: "white",
+            price: 572,
+            imageFileName: "Xiaomi_Mi13.png",
+            screen: "6,81 inch",
+            processor: "Snapdragon 888",
+            ram: 8
+        },
+        {
+            id: 3,
+            name: "Samsung Galaxy S20 FE",
+            manufacturer: "Samsung",
+            description: "lorem ipsum dolor sit amet consectetur.",
+            color: "pink",
+            price: 487,
+            imageFileName: "Galaxy_S20.png",
+            screen: "6,5 inch",
+            processor: "Exynos 990",
+            ram: 6
+        },
+    ];
+
     return (
         <Container>
-            <h1 className="align-middle"> This is home page </h1>
-            <div className="d-flex flex-wrap justify-content-center">
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img className="card-img" variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ButtonToolbar className="card-button-toolbar">
-                            <Button variant="outline-dark">See details</Button>
-                            <Button variant="outline-danger">Delete</Button>
-                        </ButtonToolbar>
-
-                    </Card.Body>
-                </Card>
-            </div>
-
+            <h1 className="home-header">Phone Catalog</h1>
+            {phoneList && <PhoneList phoneList={phoneList}/>}
         </Container>
     );
 };
