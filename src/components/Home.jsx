@@ -58,38 +58,28 @@ const Home = () => {
     return (
         <Container>
             <div className="d-flex flex-wrap justify-content-center">
-                <Card className="card-phone">
-                    <Card.Img variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <div className="mb-2">
-                            <Card.Title>{phoneList[0].name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{phoneList[0].manufacturer}</Card.Subtitle>
-                            <Card.Text>{phoneList[0].price}€</Card.Text>
-                        </div>
-                        <div>
-                            <ButtonToolbar className="card-phone-button-toolbar">
-                                <Button variant="outline-dark">See details</Button>
-                                <Button variant="outline-danger">Delete</Button>
-                            </ButtonToolbar>
-                        </div>
-                    </Card.Body>
-                </Card>
-                <Card className="card-phone">
-                    <Card.Img variant="top" src="https://via.placeholder.com/200"/>
-                    <Card.Body>
-                        <div className="mb-2">
-                            <Card.Title>{phoneList[3].name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">{phoneList[3].manufacturer}</Card.Subtitle>
-                            <Card.Text>{phoneList[3].price}€</Card.Text>
-                        </div>
-                        <div>
-                            <ButtonToolbar className="card-phone-button-toolbar">
-                                <Button variant="outline-dark">See details</Button>
-                                <Button variant="outline-danger">Delete</Button>
-                            </ButtonToolbar>
-                        </div>
-                    </Card.Body>
-                </Card>
+                {
+                    phoneList.length > 0 ?
+                        phoneList.map(phone =>
+                            <Card className="card-phone">
+                                <Card.Img variant="top" src={phone.imageFileName} alt={phone.name}/>
+                                <Card.Body>
+                                    <div className="mb-2">
+                                        <Card.Title>{phone.name}</Card.Title>
+                                        <Card.Subtitle className="mb-2 text-muted">{phone.manufacturer}</Card.Subtitle>
+                                        <Card.Text>{phone.price}€</Card.Text>
+                                    </div>
+                                    <div>
+                                        <ButtonToolbar className="card-phone-button-toolbar">
+                                            <Button variant="outline-dark">See details</Button>
+                                            <Button variant="outline-danger">Delete</Button>
+                                        </ButtonToolbar>
+                                    </div>
+                                </Card.Body>
+                            </Card>
+                        ) : <h5>No phones to show</h5>
+                }
+
             </div>
 
         </Container>
