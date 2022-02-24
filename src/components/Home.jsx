@@ -62,7 +62,7 @@ const Home = () => {
                 {
                     phoneList.length > 0 ?
                         phoneList.map(phone =>
-                            <Card className="card-phone">
+                            <Card key={phone.id} className="card-phone">
                                 <Card.Img variant="top" src={phone.imageFileName} alt={phone.name}/>
                                 <Card.Body>
                                     <div className="mb-2">
