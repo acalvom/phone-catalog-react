@@ -9,7 +9,7 @@ function App() {
             <Fragment>
                 <Switch>
                     <Route exact path="/"><Home/></Route>
-                    <Route path="/phone-detail"><PhoneDetail/></Route>
+                    <Route path="/phone-detail/:id"><PhoneDetail/></Route>
                 </Switch>
             </Fragment>
         </Router>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, ButtonToolbar, Card, Container} from "react-bootstrap";
 import './Home.css';
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -73,7 +74,11 @@ const Home = () => {
                                     </div>
                                     <div>
                                         <ButtonToolbar className="card-phone-button-toolbar">
-                                            <Button variant="dark">See details</Button>
+                                            <Button variant="dark">
+                                                <Link to={`/phone-detail/${phone.id}`}
+                                                      style={{textDecoration: "none", color: "inherit"}}> See
+                                                    details</Link>
+                                            </Button>
                                             <Button variant="danger">Delete</Button>
                                         </ButtonToolbar>
                                     </div>
