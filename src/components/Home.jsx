@@ -57,6 +57,7 @@ const Home = () => {
 
     return (
         <Container>
+            <h1 className="home-header">Phone Catalog</h1>
             <div className="d-flex flex-wrap justify-content-center">
                 {
                     phoneList.length > 0 ?
@@ -66,22 +67,21 @@ const Home = () => {
                                 <Card.Body>
                                     <div className="mb-2">
                                         <Card.Title>{phone.name}</Card.Title>
-                                        <Card.Subtitle className="mb-2 text-muted">{phone.manufacturer}</Card.Subtitle>
+                                        <Card.Subtitle
+                                            className="mb-2 text-warning">{phone.manufacturer}</Card.Subtitle>
                                         <Card.Text>{phone.price}€</Card.Text>
                                     </div>
                                     <div>
                                         <ButtonToolbar className="card-phone-button-toolbar">
-                                            <Button variant="outline-dark">See details</Button>
-                                            <Button variant="outline-danger">Delete</Button>
+                                            <Button variant="dark">See details</Button>
+                                            <Button variant="danger">Delete</Button>
                                         </ButtonToolbar>
                                     </div>
                                 </Card.Body>
                             </Card>
                         ) : <h5>No phones to show</h5>
                 }
-
             </div>
-
         </Container>
     );
 };

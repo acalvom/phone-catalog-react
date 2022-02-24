@@ -1,8 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900i&display=swap');
+
+body {
+    background: #ffe700;
+}
+
+.home-header {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
+    text-shadow: 8px 8px #1efcc3,
+    20px 20px #000000;
+}
+
 .card-phone-button-toolbar {
     justify-content: space-between;
 }
 
 .card-phone {
+    background-color: #951aeb;
+    color: white;
     width: 15em;
     margin: 1em 0.5em;
 }
