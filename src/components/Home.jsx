@@ -3,6 +3,7 @@ import {Container} from "react-bootstrap";
 import './Home.css';
 import PhoneList from "./PhoneList";
 import axios from "axios";
+import Loading from "../utils/Loading";
 
 const Home = () => {
 
@@ -32,8 +33,8 @@ const Home = () => {
 
     return (
         <Container>
-            <h1 className="home-header">Phone Catalog</h1>
-            {isFetching && <div><h2>Fetching data...</h2></div>}
+            <h1 className="home-header mb-4">Phone Catalog</h1>
+            {isFetching && <Loading/>}
             {!isFetching && phoneList && <PhoneList phoneList={phoneList}/>}
         </Container>
     );
