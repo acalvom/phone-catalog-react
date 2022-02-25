@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import PhoneList from "./PhoneList";
 import Loading from "../utils/Loading";
 import './Home.css';
+import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -36,7 +37,9 @@ const Home = () => {
         <Container>
             <h1 className="home-header mb-4">Phone Catalog</h1>
             <div className="d-flex flex-wrap justify-content-end home-button-add">
-                <Button className="rounded-circle"><span className="fa-solid fa-plus"/></Button>
+                <Link to={'/add'}>
+                    <Button className="rounded-circle"><span className="fa-solid fa-plus"/></Button>
+                </Link>
             </div>
             {isFetching && <Loading/>}
             {!isFetching && phoneList && <PhoneList phoneList={phoneList}/>}
