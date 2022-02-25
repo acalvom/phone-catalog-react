@@ -29,3 +29,13 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.home-button-add {
+    border-bottom: 2px solid white;
+}
+
+.home-button-add button {
+    margin: 1em 0;
+    border: none;
+    background-color: #C41DFC;
+}
