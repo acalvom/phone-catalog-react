@@ -6,6 +6,10 @@ const PhoneList = (props) => {
 
     const phoneList = props.phoneList;
 
+    const handleDelete = () => {
+        console.log('click')
+    }
+
     return (
         <div className="d-flex flex-wrap justify-content-center">
             {
@@ -25,7 +29,7 @@ const PhoneList = (props) => {
                                         <Link to={`/phone/${phone.id}`}>
                                             <Button variant="dark">See details</Button>
                                         </Link>
-                                        <Button variant="danger">Delete</Button>
+                                        <Button variant="danger" onClick={handleDelete}>Delete</Button>
                                     </ButtonToolbar>
                                 </div>
                             </Card.Body>
