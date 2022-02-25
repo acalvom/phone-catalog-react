@@ -29,11 +29,7 @@ const Home = () => {
             }
         }
 
-        setTimeout(() => {
-            getPhoneList().then();
-        }, 2000);
-
-        // getPhoneList().then();
+        getPhoneList().then();
     }, []);
 
     return (
