@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {Container} from "react-bootstrap";
-import './Home.css';
-import PhoneList from "./PhoneList";
 import axios from "axios";
+import Swal from "sweetalert2";
+import PhoneList from "./PhoneList";
 import Loading from "../utils/Loading";
+import './Home.css';
 
 const Home = () => {
 
@@ -17,16 +18,20 @@ const Home = () => {
                 const response = await axios.get('/phones');
                 setPhoneList(response.data);
             } catch (e) {
-                console.log(e);
+                await Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: e,
+                    background: 'rgb(228 255 162)'
+                })
             } finally {
                 setIsFetching(false);
-                console.log('End of request');
             }
         }
 
         setTimeout(() => {
             getPhoneList().then();
-        }, 5000);
+        }, 2000);
 
         // getPhoneList().then();
     }, []);
