@@ -1,0 +1,37 @@
+.phone-add-title {
+    color: #1bb3ff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.phone-add-form {
+    margin: 2em 0;
+    border: 2px solid #FC1D55;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.phone-add-form button {
+    background-color: #7703d6;
+    border: none;
+    width: 50%;
+    color: white;
+}
+
+.phone-add-group {
+    width: 75%;
+    margin: 0 auto 1em;
+}
+
+.phone-add-group label {
+    color: #7703d6;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.phone-add-group span {
+    color: #ef2d56;
+    font-size: smaller;
+}
