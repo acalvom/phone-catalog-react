@@ -22,12 +22,18 @@ const Home = () => {
                 console.log('End of request');
             }
         }
-        getPhoneList().then();
+
+        setTimeout(() => {
+            getPhoneList().then();
+        }, 5000);
+
+        // getPhoneList().then();
     }, []);
 
     return (
         <Container>
             <h1 className="home-header">Phone Catalog</h1>
+            {isFetching && <div><h2>Fetching data...</h2></div>}
             {!isFetching && phoneList && <PhoneList phoneList={phoneList}/>}
         </Container>
     );
