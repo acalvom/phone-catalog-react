@@ -10,7 +10,7 @@ function App() {
             <Fragment>
                 <Switch>
                     <Route exact path="/"><Home/></Route>
-                    <Route path="/phone-detail/:id"><PhoneDetail/></Route>
+                    <Route path="/phone/:id"><PhoneDetail/></Route>
                     <Route path="/*"><NotFound/></Route>
                 </Switch>
             </Fragment>

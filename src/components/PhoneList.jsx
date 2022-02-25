@@ -22,7 +22,7 @@ const PhoneList = (props) => {
                                 </div>
                                 <div>
                                     <ButtonToolbar className="card-phone-button-toolbar">
-                                        <Link to={`/phone-detail/${phone.id}`}>
+                                        <Link to={`/phone/${phone.id}`}>
                                             <Button variant="dark">See details</Button>
                                         </Link>
                                         <Button variant="danger">Delete</Button>
