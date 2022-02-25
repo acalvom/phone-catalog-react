@@ -1,0 +1,37 @@
+.not-found h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5em;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
+    text-shadow: 8px 8px #428dff,
+    20px 20px #000000;
+}
+
+.not-found img {
+    margin: 2em;
+    max-height: 50vh;
+}
+
+.not-found p {
+    color: #FC1D55;
+    font-weight: bolder;
+}
+
+.not-found a {
+    text-decoration: none;
+    background-color: #428dff;
+    border-radius: 10px;
+    padding: 0.5em 0.8em;
+    color: #ffe700;
+}
+
+.not-found a:hover {
+    text-decoration: underline;
+    background-color: #FC1D55;
+    color: #1efcc3;
+}
+

@@ -30,7 +30,7 @@ const PhoneList = (props) => {
                                 </div>
                             </Card.Body>
                         </Card>
-                    ) : <h5>No phones to show</h5>
+                    ) : <h2 className="fw-bold-3">No phones to show</h2>
             }
         </div>
     );
