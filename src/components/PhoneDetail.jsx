@@ -37,6 +37,7 @@ const PhoneDetail = () => {
 
     return (
         <Container>
+            <h2 className="phone-details-title"><i className="fa-solid fa-mobile"/>  Phone details</h2>
             {isFetching && <Loading/>}
             {!isFetching && phoneDetails &&
             <div
