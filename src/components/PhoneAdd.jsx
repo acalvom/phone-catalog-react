@@ -21,8 +21,16 @@ const PhoneAdd = () => {
                         </div>
                         <div className="phone-add-group">
                             <label htmlFor="phoneManufacturer" className="form-label">Manufacturer</label>
-                            <input type="text" className="form-control form-control-sm" id="phoneManufacturer"
-                                   {...register("phoneManufacturer", {required: true})}/>
+                            <select className="form-select form-select-sm"
+                                    id="phoneManufacturer" {...register("phoneManufacturer", {required: true})}>
+                                <option value="apple">APPLE</option>
+                                <option value="samsung">SAMSUNG</option>
+                                <option value="xiaomi">XIAOMI</option>
+                                <option value="huawei">HUAWEI</option>
+                                <option value="motorola">MOTOROLA</option>
+                                <option value="sony">SONY</option>
+                                <option value="oppo">OPPO</option>
+                            </select>
                             {errors.manufacturer && <span>Manufacturer is required</span>}
                         </div>
                         <div className="phone-add-group">
