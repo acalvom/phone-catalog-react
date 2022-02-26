@@ -1,0 +1,48 @@
+.phone-add-title {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
+    text-shadow: 8px 8px #FC1D55,
+    20px 20px #000000;
+}
+
+.phone-add-form {
+    margin: 2em 0;
+    border: 2px solid #FC1D55;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.phone-add-form button {
+    background-color: #fc1d55;
+    border: none;
+    width: 50%;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.phone-add-form button:hover {
+    color: #ffe700;
+    background-color: #006ee9;
+}
+
+.phone-add-group {
+    width: 75%;
+    margin: 0 auto 1em;
+}
+
+.phone-add-group label {
+    color: #7703d6;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.phone-add-group span {
+    color: #ef2d56;
+    font-size: smaller;
+}
