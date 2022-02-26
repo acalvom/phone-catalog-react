@@ -24,12 +24,11 @@ const PhoneAdd = () => {
 
     const addPhone = async (formPhone) => {
         try {
-            let result = await axios.post('/add', formPhone);
-            let data = result.data;
+            await axios.post('/add', formPhone);
             await Swal.fire({
                 icon: 'success',
                 title: 'Great!',
-                text: data,
+                text: 'Phone successfully created',
                 background: 'rgb(228 255 162)'
             })
         } catch (e) {
