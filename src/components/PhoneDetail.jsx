@@ -41,7 +41,7 @@ const PhoneDetail = () => {
             {!isFetching && phoneDetails &&
             <div
                 className=" phone-details d-flex flex-wrap flex-sm-row flex-column justify-content-center align-items-center overflow-auto">
-                <img src="https://via.placeholder.com/300" alt={phoneDetails.name}/>
+                <img src={phoneDetails.imageFilePath} alt={phoneDetails.name}/>
                 <div>
                     <h2>{phoneDetails.name}</h2>
                     <span>{phoneDetails.manufacturer}</span>
