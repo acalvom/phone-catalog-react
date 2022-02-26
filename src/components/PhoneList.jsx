@@ -33,7 +33,7 @@ const PhoneList = (props) => {
                 phoneList.length > 0 ?
                     phoneList.map(phone =>
                         <Card key={phone.id} className="card-phone">
-                            <Card.Img variant="top" src={phone.imageFileName} alt={phone.name}/>
+                            <Card.Img variant="top" src={phone.imageFilePath} alt={phone.name}/>
                             <Card.Body>
                                 <div className="mb-2">
                                     <Card.Title>{phone.name}</Card.Title>
