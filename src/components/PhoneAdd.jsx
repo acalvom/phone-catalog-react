@@ -33,7 +33,7 @@ const PhoneAdd = () => {
         <Container className="d-flex flex-wrap flex-column my-3 mx-auto align-content-center">
             <h2 className="phone-add-title"><i className="fa-solid fa-mobile"/> New phone</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
+            <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form" encType="multipart/form-data">
                 <Row className="justify-content-between p-3">
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
