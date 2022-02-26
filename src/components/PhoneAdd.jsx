@@ -2,14 +2,37 @@ import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import {useForm} from "react-hook-form";
 import './PhoneAdd.css';
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const PhoneAdd = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
-    const onSubmit = data => console.log(data);
+
+
+    const onSubmit = (data, event) => {
+        event.preventDefault();
+        addPhone(data).then();
+    }
+
+    const addPhone = async (newPhone) => {
+        try {
+            let result = await axios.post('/add', newPhone);
+            let data = result.data;
+            console.log(data)
+        } catch (e) {
+            await Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: e.response.data[0],
+                background: 'rgb(228 255 162)'
+            })
+        }
+    }
 
     return (
         <Container className="d-flex flex-wrap flex-column my-3 mx-auto align-content-center">
             <h2 className="phone-add-title"><i className="fa-solid fa-mobile"/> New phone</h2>
+
             <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
                 <Row className="justify-content-between p-3">
                     <Col sm={10} md={4}>
@@ -39,8 +62,8 @@ const PhoneAdd = () => {
                                       {...register("phoneDescription", {required: true})}/>
                             {errors.phoneDescription && <span>Phone description is required</span>}
                         </div>
-
                     </Col>
+
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
                             <label htmlFor="phoneColor" className="form-label">Color</label>
@@ -59,8 +82,8 @@ const PhoneAdd = () => {
                             <input type="text" className="form-control form-control-sm" id="phoneScreen"
                                    {...register("phoneScreen")}/>
                         </div>
-
                     </Col>
+
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
                             <label htmlFor="phoneProcessor" className="form-label">Processor</label>
@@ -80,14 +103,13 @@ const PhoneAdd = () => {
                             {errors.phoneImage && <span>Image is required</span>}
                         </div>
                     </Col>
+
                 </Row>
+
                 <Row className="d-flex justify-content-center">
                     <button type="submit" className="btn">Add phone</button>
                 </Row>
-
-
             </form>
-
         </Container>
     );
 };
