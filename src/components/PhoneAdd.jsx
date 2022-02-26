@@ -8,17 +8,24 @@ import Swal from "sweetalert2";
 const PhoneAdd = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
 
-
-    const onSubmit = (data, event) => {
-        event.preventDefault();
-        addPhone(data).then();
+    const convertToFormData = (data) => {
+        const formNewPhone = new FormData();
+        Object.keys({...data, phoneImage: data.phoneImage[0]}).forEach(key => {
+            if (key === 'phoneImage') formNewPhone.append(key, data[key][0])
+            else formNewPhone.append(key, data[key])
+        });
+        return formNewPhone;
     }
 
-    const addPhone = async (newPhone) => {
+    const onSubmit = async (data, event) => {
+        event.preventDefault();
+        addPhone(convertToFormData(data)).then();
+    }
+
+    const addPhone = async (formPhone) => {
         try {
-            let result = await axios.post('/add', newPhone);
+            let result = await axios.post('/add', formPhone);
             let data = result.data;
-            console.log(data)
         } catch (e) {
             await Swal.fire({
                 icon: 'error',
@@ -33,7 +40,7 @@ const PhoneAdd = () => {
         <Container className="d-flex flex-wrap flex-column my-3 mx-auto align-content-center">
             <h2 className="phone-add-title"><i className="fa-solid fa-mobile"/> New phone</h2>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form" encType="multipart/form-data">
+            <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
                 <Row className="justify-content-between p-3">
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
@@ -98,7 +105,8 @@ const PhoneAdd = () => {
                         </div>
                         <div className="phone-add-group">
                             <label htmlFor="phoneImage" className="form-label">Upload Image</label>
-                            <input type="file" className="form-control form-control-sm" id="phoneImage"
+                            <input name="phoneImage"
+                                   type="file" accept="image/*" className="form-control form-control-sm" id="phoneImage"
                                    {...register("phoneImage", {required: true})}/>
                             {errors.phoneImage && <span>Image is required</span>}
                         </div>
