@@ -1,5 +1,19 @@
+.phone-details-title {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
+    text-shadow: 8px 8px #1bb3ff,
+    20px 20px #000000;
+    margin-bottom: 1em;
+}
+
 .phone-details img {
-    max-width: 50%;
+    max-width: 50vh;
     margin: 1em;
 }
 
