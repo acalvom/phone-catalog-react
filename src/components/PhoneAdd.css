@@ -1,9 +1,14 @@
 .phone-add-title {
-    color: #1bb3ff;
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-weight: bold;
-    font-size: 2em;
     text-transform: uppercase;
+    font-size: 2.5em;
+    letter-spacing: 0.1em;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ffffff;
+    text-shadow: 8px 8px #FC1D55,
+    20px 20px #000000;
 }
 
 .phone-add-form {
@@ -14,10 +19,16 @@
 }
 
 .phone-add-form button {
-    background-color: #7703d6;
+    background-color: #fc1d55;
     border: none;
     width: 50%;
     color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.phone-add-form button:hover {
+    color: #ffe700;
+    background-color: #006ee9;
 }
 
 .phone-add-group {

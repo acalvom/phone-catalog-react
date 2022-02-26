@@ -9,7 +9,7 @@ const PhoneAdd = () => {
 
     return (
         <Container className="d-flex flex-wrap flex-column my-3 mx-auto align-content-center">
-            <h2 className="phone-add-title"><i className="fa-solid fa-mobile"/> Add new phone</h2>
+            <h2 className="phone-add-title"><i className="fa-solid fa-mobile"/> New phone</h2>
             <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
                 <Row className="justify-content-between p-3">
                     <Col sm={10} md={4}>
@@ -73,7 +73,7 @@ const PhoneAdd = () => {
                         </div>
                     </Col>
                 </Row>
-                <Row className="d-flex justify-content-center my-2">
+                <Row className="d-flex justify-content-center">
                     <button type="submit" className="btn">Add phone</button>
                 </Row>
 
