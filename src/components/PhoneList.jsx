@@ -3,6 +3,7 @@ import {Button, ButtonToolbar, Card} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import CardPhoneInfo from "../utils/CardPhoneInfo";
 
 const PhoneList = (props) => {
 
@@ -34,12 +35,7 @@ const PhoneList = (props) => {
                         <Card key={phone.id} className="card-phone">
                             <Card.Img variant="top" src={phone.imageFilePath} alt={phone.name}/>
                             <Card.Body>
-                                <div className="mb-2">
-                                    <Card.Title>{phone.name}</Card.Title>
-                                    <Card.Subtitle
-                                        className="mb-2 text-warning">{phone.manufacturer}</Card.Subtitle>
-                                    <Card.Text>{phone.price}€</Card.Text>
-                                </div>
+                                <CardPhoneInfo phone={phone}/>
                                 <div>
                                     <ButtonToolbar className="card-phone-button-toolbar">
                                         <Link to={`/phone/${phone.id}`}>
