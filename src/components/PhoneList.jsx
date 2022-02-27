@@ -1,9 +1,9 @@
 import React from 'react';
-import {Button, ButtonToolbar, Card} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Card} from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 import CardPhoneInfo from "../utils/CardPhoneInfo";
+import CardPhoneButtons from "../utils/CardPhoneButtons";
 
 const PhoneList = (props) => {
 
@@ -36,15 +36,7 @@ const PhoneList = (props) => {
                             <Card.Img variant="top" src={phone.imageFilePath} alt={phone.name}/>
                             <Card.Body>
                                 <CardPhoneInfo phone={phone}/>
-                                <div>
-                                    <ButtonToolbar className="card-phone-button-toolbar">
-                                        <Link to={`/phone/${phone.id}`}>
-                                            <Button variant="dark"><i className="fa-solid fa-circle-info"/></Button>
-                                        </Link>
-                                        <Button variant="danger" onClick={() => handleDelete(phone.id)}><i
-                                            className="fa-solid fa-trash-can"/></Button>
-                                    </ButtonToolbar>
-                                </div>
+                                <CardPhoneButtons id={phone.id} handleDelete={handleDelete}/>
                             </Card.Body>
                         </Card>
                     ) : <h2 className="fw-bold-3">No phones to show</h2>
