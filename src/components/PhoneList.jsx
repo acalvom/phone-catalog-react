@@ -1,23 +1,24 @@
 import React from 'react';
-import {Button, ButtonToolbar, Card} from "react-bootstrap";
-import {Link} from "react-router-dom";
+import {Card} from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
+import CardPhoneInfo from "../utils/CardPhoneInfo";
+import CardPhoneButtons from "../utils/CardPhoneButtons";
 
 const PhoneList = (props) => {
 
     const phoneList = props.phoneList;
 
-    const handleDelete = (id) => {
-        deletePhone(id).then();
+    const handleDelete = (id, filename) => {
+        deletePhone(id, filename).then();
     }
 
-    const deletePhone = async (id) => {
+    const deletePhone = async (id, filename) => {
         try {
             await axios.delete('/phone/' + id);
+            await axios.delete('/uploads/' + filename);
             window.location.reload(false);
         } catch (e) {
-            console.log(e.response.data[0])
             await Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -35,20 +36,9 @@ const PhoneList = (props) => {
                         <Card key={phone.id} className="card-phone">
                             <Card.Img variant="top" src={phone.imageFilePath} alt={phone.name}/>
                             <Card.Body>
-                                <div className="mb-2">
-                                    <Card.Title>{phone.name}</Card.Title>
-                                    <Card.Subtitle
-                                        className="mb-2 text-warning">{phone.manufacturer}</Card.Subtitle>
-                                    <Card.Text>{phone.price}€</Card.Text>
-                                </div>
-                                <div>
-                                    <ButtonToolbar className="card-phone-button-toolbar">
-                                        <Link to={`/phone/${phone.id}`}>
-                                            <Button variant="dark">See details</Button>
-                                        </Link>
-                                        <Button variant="danger" onClick={() => handleDelete(phone.id)}>Delete</Button>
-                                    </ButtonToolbar>
-                                </div>
+                                <CardPhoneInfo phone={phone}/>
+                                <CardPhoneButtons id={phone.id} filename={phone.imageEncryptedFileName}
+                                                  handleDelete={handleDelete}/>
                             </Card.Body>
                         </Card>
                     ) : <h2 className="fw-bold-3">No phones to show</h2>
