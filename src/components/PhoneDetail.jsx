@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import {Container} from "react-bootstrap";
 import Loading from "../utils/Loading";
+import PhoneDetailContent from "./PhoneDetailContent";
 import './PhoneDetails.css';
 
 
@@ -37,26 +38,9 @@ const PhoneDetail = () => {
 
     return (
         <Container>
-            <h2 className="phone-details-title"><i className="fa-solid fa-mobile"/>  Phone details</h2>
+            <h2 className="phone-details-title"><i className="fa-solid fa-mobile"/> Phone details</h2>
             {isFetching && <Loading/>}
-            {!isFetching && phoneDetails &&
-            <div
-                className=" phone-details d-flex flex-wrap flex-sm-row flex-column justify-content-center align-items-center overflow-auto">
-                <img src={phoneDetails.imageFilePath} alt={phoneDetails.name}/>
-                <div>
-                    <h2>{phoneDetails.name}</h2>
-                    <span>{phoneDetails.manufacturer}</span>
-                    <p className="my-1">{phoneDetails.description}</p>
-                    <p className="phone-details-price"><span>{phoneDetails.price} €</span></p>
-                    <ul>
-                        <li><span className="fs-6">COLOR:</span> {phoneDetails.color}</li>
-                        <li><span className="fs-6">PROCESSOR:</span> {phoneDetails.processor}</li>
-                        <li><span className="fs-6">SCREEN:</span> {phoneDetails.screen}</li>
-                        <li><span className="fs-6">RAM:</span> {phoneDetails.ram}</li>
-                    </ul>
-                </div>
-            </div>
-            }
+            {!isFetching && phoneDetails && <PhoneDetailContent phoneDetails={phoneDetails}/>}
         </Container>
     );
 };
