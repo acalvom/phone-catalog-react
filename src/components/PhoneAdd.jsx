@@ -51,51 +51,31 @@ const PhoneAdd = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
                 <Row className="justify-content-between p-3">
 
-
                     <Col sm={10} md={4}>
-
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneName" label="Model" register={register}
-                                                    error={errors.phoneName}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <SelectFieldFormAddPhone id="phoneManufacturer" label="Manufacturer" register={register}
-                                                     error={errors.manufacturer}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <TextareaFieldFormAddPhone id="phoneDescription" label="Description" register={register}
-                                                       error={errors.phoneDescription}/>
-                        </div>
+                        <InputFieldFormAddPhone id="phoneName" label="Model" register={register}
+                                                error={errors.phoneName}/>
+                        <SelectFieldFormAddPhone id="phoneManufacturer" label="Manufacturer" register={register}
+                                                 error={errors.manufacturer}/>
+                        <TextareaFieldFormAddPhone id="phoneDescription" label="Description" register={register}
+                                                   error={errors.phoneDescription}/>
                     </Col>
 
                     <Col sm={10} md={4}>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneColor" label="Color" register={register}
-                                                    error={errors.phoneColor}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phonePrice" label="Price" register={register}
-                                                    error={errors.phonePrice}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneScreen" label="Screen" required={false}
-                                                    register={register}/>
-                        </div>
+                        <InputFieldFormAddPhone id="phoneColor" label="Color" register={register}
+                                                error={errors.phoneColor}/>
+                        <InputFieldFormAddPhone id="phonePrice" label="Price" register={register}
+                                                error={errors.phonePrice}/>
+                        <InputFieldFormAddPhone id="phoneScreen" label="Screen" required={false}
+                                                register={register}/>
                     </Col>
 
                     <Col sm={10} md={4}>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneProcessor" label="Processor" required={false}
-                                                    register={register}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneRam" label="RAM" register={register}
-                                                    error={errors.phoneRam}/>
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneImage" label="Image" type="file" register={register}
-                                                    error={errors.phoneImage}/>
-                        </div>
+                        <InputFieldFormAddPhone id="phoneProcessor" label="Processor" required={false}
+                                                register={register}/>
+                        <InputFieldFormAddPhone id="phoneRam" label="RAM" register={register}
+                                                error={errors.phoneRam}/>
+                        <InputFieldFormAddPhone id="phoneImage" label="Image" type="file" register={register}
+                                                error={errors.phoneImage}/>
                     </Col>
 
                 </Row>

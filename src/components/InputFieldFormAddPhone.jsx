@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 const InputFieldFormAddPhone = (props) => {
 
@@ -10,12 +10,12 @@ const InputFieldFormAddPhone = (props) => {
     const error = props.error;
 
     return (
-        <Fragment>
+        <div className="phone-add-group">
             <label htmlFor={id} className="form-label">{label}</label>
             <input type={type} className="form-control form-control-sm"
                    id={id} {...register(id, {required: required})}/>
             {error && <span>{label} is required</span>}
-        </Fragment>
+        </div>
     );
 };
 

@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 const SelectFieldFormAddPhone = (props) => {
 
@@ -8,7 +8,7 @@ const SelectFieldFormAddPhone = (props) => {
     const error = props.error;
 
     return (
-        <Fragment>
+        <div className="phone-add-group">
             <label htmlFor={id} className="form-label">{label}</label>
             <select className="form-select form-select-sm"
                     id={id} {...register(id, {required: true})}>
@@ -21,7 +21,7 @@ const SelectFieldFormAddPhone = (props) => {
                 <option value="Oppo">OPPO</option>
             </select>
             {error && <span>{label} is required</span>}
-        </Fragment>
+        </div>
     );
 };
 

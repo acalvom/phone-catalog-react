@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 
 const TextareaFieldFormAddPhone = (props) => {
 
@@ -8,11 +8,11 @@ const TextareaFieldFormAddPhone = (props) => {
     const error = props.error;
 
     return (
-        <Fragment>
+        <div className="phone-add-group">
             <label htmlFor={id} className="form-label">{label}</label>
             <textarea className="form-control form-control-sm" rows="3" id={id} {...register(id, {required: true})}/>
             {error && <span>{label} is required</span>}
-        </Fragment>
+        </div>
     );
 };
 
