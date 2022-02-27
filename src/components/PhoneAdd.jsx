@@ -55,44 +55,46 @@ const PhoneAdd = () => {
                     <Col sm={10} md={4}>
 
                         <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneName" label="Model" register={register}/>
-                            {errors.phoneName && <span>Phone name is required</span>}
+                            <InputFieldFormAddPhone id="phoneName" label="Model" register={register}
+                                                    error={errors.phoneName}/>
                         </div>
                         <div className="phone-add-group">
-                            <SelectFieldFormAddPhone id="phoneManufacturer" label="Manufacturer" register={register}/>
-                            {errors.manufacturer && <span>Manufacturer is required</span>}
+                            <SelectFieldFormAddPhone id="phoneManufacturer" label="Manufacturer" register={register}
+                                                     error={errors.manufacturer}/>
                         </div>
                         <div className="phone-add-group">
-                            <TextareaFieldFormAddPhone id="phoneDescription" label="Description" register={register}/>
-                            {errors.phoneDescription && <span>Phone description is required</span>}
-                        </div>
-                    </Col>
-
-                    <Col sm={10} md={4}>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneColor" label="Color" register={register}/>
-                            {errors.phoneColor && <span>Color is required</span>}
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phonePrice" label="Price" register={register}/>
-                            {errors.phonePrice && <span>Price is required</span>}
-                        </div>
-                        <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneScreen" label="Screen" register={register}/>
+                            <TextareaFieldFormAddPhone id="phoneDescription" label="Description" register={register}
+                                                       error={errors.phoneDescription}/>
                         </div>
                     </Col>
 
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneProcessor" label="Processor" register={register}/>
+                            <InputFieldFormAddPhone id="phoneColor" label="Color" register={register}
+                                                    error={errors.phoneColor}/>
                         </div>
                         <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneRam" label="RAM" register={register}/>
-                            {errors.phoneRam && <span>RAM is required</span>}
+                            <InputFieldFormAddPhone id="phonePrice" label="Price" register={register}
+                                                    error={errors.phonePrice}/>
                         </div>
                         <div className="phone-add-group">
-                            <InputFieldFormAddPhone id="phoneImage" label="Image" type="file" register={register}/>
-                            {errors.phoneImage && <span>Image is required</span>}
+                            <InputFieldFormAddPhone id="phoneScreen" label="Screen" required={false}
+                                                    register={register}/>
+                        </div>
+                    </Col>
+
+                    <Col sm={10} md={4}>
+                        <div className="phone-add-group">
+                            <InputFieldFormAddPhone id="phoneProcessor" label="Processor" required={false}
+                                                    register={register}/>
+                        </div>
+                        <div className="phone-add-group">
+                            <InputFieldFormAddPhone id="phoneRam" label="RAM" register={register}
+                                                    error={errors.phoneRam}/>
+                        </div>
+                        <div className="phone-add-group">
+                            <InputFieldFormAddPhone id="phoneImage" label="Image" type="file" register={register}
+                                                    error={errors.phoneImage}/>
                         </div>
                     </Col>
 

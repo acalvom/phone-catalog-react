@@ -5,6 +5,7 @@ const SelectFieldFormAddPhone = (props) => {
     const id = props.id;
     const label = props.label;
     const register = props.register;
+    const error = props.error;
 
     return (
         <Fragment>
@@ -19,6 +20,7 @@ const SelectFieldFormAddPhone = (props) => {
                 <option value="Sony">SONY</option>
                 <option value="Oppo">OPPO</option>
             </select>
+            {error && <span>{label} is required</span>}
         </Fragment>
     );
 };
