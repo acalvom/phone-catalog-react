@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Container} from "react-bootstrap";
+import {Container} from "react-bootstrap";
 import axios from "axios";
 import Swal from "sweetalert2";
 import PhoneList from "./PhoneList";
 import Loading from "../utils/Loading";
+import ButtonAddPhone from "../utils/ButtonAddPhone";
 import './Home.css';
-import {Link} from "react-router-dom";
 
 const Home = () => {
 
@@ -36,12 +36,8 @@ const Home = () => {
     return (
         <Container>
             <h1 className="home-header mb-4">Phone Catalog</h1>
-            <div className="d-flex flex-wrap justify-content-end home-button-add">
-                <Link to={'/add'}>
-                    <Button className="rounded-circle"><span className="fa-solid fa-plus"/></Button>
-                </Link>
-            </div>
             {isFetching && <Loading/>}
+            {!isFetching &&<ButtonAddPhone/>}
             {!isFetching && phoneList && <PhoneList phoneList={phoneList}/>}
         </Container>
     );
