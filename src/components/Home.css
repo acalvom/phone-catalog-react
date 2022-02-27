@@ -39,6 +39,10 @@
     margin: 1em 0.5em;
 }
 
+.card-phone img {
+    max-height: 300px;
+}
+
 .card-phone .card-body {
     display: flex;
     flex-direction: column;
