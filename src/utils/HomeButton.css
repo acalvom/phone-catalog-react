@@ -1,0 +1,14 @@
+.back-home-button {
+    max-width: 100px;
+    text-decoration: none;
+    background-color: #428dff;
+    border-radius: 10px;
+    padding: 0.5em 0.8em;
+    color: #ffe700;
+}
+
+.back-home-button:hover {
+    text-decoration: underline;
+    background-color: #FC1D55;
+    color: #1efcc3;
+}
