@@ -17,7 +17,6 @@ const PhoneList = (props) => {
             await axios.delete('/phone/' + id);
             window.location.reload(false);
         } catch (e) {
-            console.log(e.response.data[0])
             await Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
@@ -44,9 +43,10 @@ const PhoneList = (props) => {
                                 <div>
                                     <ButtonToolbar className="card-phone-button-toolbar">
                                         <Link to={`/phone/${phone.id}`}>
-                                            <Button variant="dark">See details</Button>
+                                            <Button variant="dark"><i className="fa-solid fa-circle-info"/></Button>
                                         </Link>
-                                        <Button variant="danger" onClick={() => handleDelete(phone.id)}>Delete</Button>
+                                        <Button variant="danger" onClick={() => handleDelete(phone.id)}><i
+                                            className="fa-solid fa-trash-can"/></Button>
                                     </ButtonToolbar>
                                 </div>
                             </Card.Body>
