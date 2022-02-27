@@ -5,6 +5,8 @@ import {Col, Container, Row} from "react-bootstrap";
 import {useForm} from "react-hook-form";
 import './PhoneAdd.css';
 import InputFieldFormAddPhone from "./InputFieldFormAddPhone";
+import TextareaFieldFormAddPhone from "./TextareaFieldFormAddPhone";
+import SelectFieldFormAddPhone from "./SelectFieldFormAddPhone";
 
 const PhoneAdd = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -57,23 +59,11 @@ const PhoneAdd = () => {
                             {errors.phoneName && <span>Phone name is required</span>}
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneManufacturer" className="form-label">Manufacturer</label>
-                            <select className="form-select form-select-sm"
-                                    id="phoneManufacturer" {...register("phoneManufacturer", {required: true})}>
-                                <option value="Apple">APPLE</option>
-                                <option value="Samsung">SAMSUNG</option>
-                                <option value="Xiaomi">XIAOMI</option>
-                                <option value="Huawei">HUAWEI</option>
-                                <option value="Motorola">MOTOROLA</option>
-                                <option value="Sony">SONY</option>
-                                <option value="Oppo">OPPO</option>
-                            </select>
+                            <SelectFieldFormAddPhone id="phoneManufacturer" label="Manufacturer" register={register}/>
                             {errors.manufacturer && <span>Manufacturer is required</span>}
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneDescription" className="form-label">Description</label>
-                            <textarea className="form-control form-control-sm" id="phoneDescription" rows="3"
-                                      {...register("phoneDescription", {required: true})}/>
+                            <TextareaFieldFormAddPhone id="phoneDescription" label="Description" register={register}/>
                             {errors.phoneDescription && <span>Phone description is required</span>}
                         </div>
                     </Col>
