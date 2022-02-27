@@ -21,11 +21,26 @@
     justify-content: space-between;
 }
 
+.card-phone-button-toolbar .info {
+    background-color: #FFE700;
+    border: none;
+    color: #006ee9;
+}
+
+.card-phone-button-toolbar .delete {
+    background-color: #fa0db5;
+    border: none;
+}
+
 .card-phone {
     background-color: #C41DFC;
     color: white;
     width: 15em;
     margin: 1em 0.5em;
+}
+
+.card-phone img {
+    max-height: 300px;
 }
 
 .card-phone .card-body {

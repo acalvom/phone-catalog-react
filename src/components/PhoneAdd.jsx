@@ -1,5 +1,4 @@
-import React from 'react';
-import axios from "axios";
+import React, {useEffect} from 'react';
 import Swal from "sweetalert2";
 import {Col, Container, Row} from "react-bootstrap";
 import {useForm} from "react-hook-form";
@@ -7,9 +6,11 @@ import './PhoneAdd.css';
 import InputFieldFormAddPhone from "./PhoneAddFormFields/InputFieldFormAddPhone";
 import TextareaFieldFormAddPhone from "./PhoneAddFormFields/TextareaFieldFormAddPhone";
 import SelectFieldFormAddPhone from "./PhoneAddFormFields/SelectFieldFormAddPhone";
+import axios from "axios";
+import HomeButton from "../utils/HomeButton";
 
 const PhoneAdd = () => {
-    const {register, handleSubmit, formState: {errors}} = useForm();
+    const {register, handleSubmit, reset, formState: {errors, isSubmitSuccessful}} = useForm();
 
     const convertToFormData = (data) => {
         const formNewPhone = new FormData();
@@ -19,6 +20,21 @@ const PhoneAdd = () => {
         });
         return formNewPhone;
     }
+
+    useEffect(() => {
+        if (isSubmitSuccessful) {
+            reset({
+                phoneName: "",
+                phoneManufacturer: "",
+                phoneDescription: "",
+                phoneColor: "",
+                phonePrice: "",
+                phoneScreen: "",
+                phoneProcessor: "",
+                phoneRam: ""
+            });
+        }
+    }, [isSubmitSuccessful, reset]);
 
     const onSubmit = async (data, event) => {
         event.preventDefault();
@@ -84,6 +100,7 @@ const PhoneAdd = () => {
                     <button type="submit" className="btn">Add phone</button>
                 </Row>
             </form>
+            <HomeButton/>
         </Container>
     );
 };

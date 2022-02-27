@@ -12,9 +12,9 @@ const CardPhoneButtons = (props) => {
         <div>
             <ButtonToolbar className="card-phone-button-toolbar">
                 <Link to={`/phone/${id}`}>
-                    <Button variant="dark"><i className="fa-solid fa-circle-info"/></Button>
+                    <Button className="info"><i className="fa-solid fa-circle-info"/></Button>
                 </Link>
-                <Button variant="danger" onClick={() => handleDelete(id, filename)}><i
+                <Button className="delete" onClick={() => handleDelete(id, filename)}><i
                     className="fa-solid fa-trash-can"/></Button>
             </ButtonToolbar>
         </div>
