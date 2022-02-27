@@ -6,6 +6,7 @@ import {Container} from "react-bootstrap";
 import Loading from "../utils/Loading";
 import PhoneDetailContent from "./PhoneDetailContent";
 import './PhoneDetails.css';
+import HomeButton from "../utils/HomeButton";
 
 
 const PhoneDetail = () => {
@@ -41,6 +42,7 @@ const PhoneDetail = () => {
             <h2 className="phone-details-title"><i className="fa-solid fa-mobile"/> Phone details</h2>
             {isFetching && <Loading/>}
             {!isFetching && phoneDetails && <PhoneDetailContent phoneDetails={phoneDetails}/>}
+            <HomeButton/>
         </Container>
     );
 };

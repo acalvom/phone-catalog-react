@@ -7,6 +7,7 @@ import InputFieldFormAddPhone from "./PhoneAddFormFields/InputFieldFormAddPhone"
 import TextareaFieldFormAddPhone from "./PhoneAddFormFields/TextareaFieldFormAddPhone";
 import SelectFieldFormAddPhone from "./PhoneAddFormFields/SelectFieldFormAddPhone";
 import axios from "axios";
+import HomeButton from "../utils/HomeButton";
 
 const PhoneAdd = () => {
     const {register, handleSubmit, reset, formState: {errors, isSubmitSuccessful}} = useForm();
@@ -99,6 +100,7 @@ const PhoneAdd = () => {
                     <button type="submit" className="btn">Add phone</button>
                 </Row>
             </form>
+            <HomeButton/>
         </Container>
     );
 };
