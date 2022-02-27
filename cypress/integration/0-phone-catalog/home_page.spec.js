@@ -7,4 +7,10 @@ describe('Phone Catalog Home Page', () => {
             .should('be.visible')
             .should('be.enabled')
     })
+
+    it('navigate to /add when clicking "Add" button', () => {
+        cy.get('.home-button-add button').click()
+        cy.url().should('include', '/add')
+        cy.url().should('eq', 'http://localhost:3000/add')
+    })
 })
