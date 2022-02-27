@@ -4,9 +4,9 @@ import Swal from "sweetalert2";
 import {Col, Container, Row} from "react-bootstrap";
 import {useForm} from "react-hook-form";
 import './PhoneAdd.css';
-import InputFieldFormAddPhone from "./InputFieldFormAddPhone";
-import TextareaFieldFormAddPhone from "./TextareaFieldFormAddPhone";
-import SelectFieldFormAddPhone from "./SelectFieldFormAddPhone";
+import InputFieldFormAddPhone from "./PhoneAddFormFields/InputFieldFormAddPhone";
+import TextareaFieldFormAddPhone from "./PhoneAddFormFields/TextareaFieldFormAddPhone";
+import SelectFieldFormAddPhone from "./PhoneAddFormFields/SelectFieldFormAddPhone";
 
 const PhoneAdd = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
