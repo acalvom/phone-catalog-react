@@ -91,10 +91,7 @@ const PhoneAdd = () => {
                             {errors.phoneRam && <span>RAM is required</span>}
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneImage" className="form-label">Upload Image</label>
-                            <input name="phoneImage"
-                                   type="file" accept="image/*" className="form-control form-control-sm" id="phoneImage"
-                                   {...register("phoneImage", {required: true})}/>
+                            <InputFieldFormAddPhone id="phoneImage" label="Image" type="file" register={register}/>
                             {errors.phoneImage && <span>Image is required</span>}
                         </div>
                     </Col>
