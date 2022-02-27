@@ -1,9 +1,10 @@
 import React from 'react';
+import axios from "axios";
+import Swal from "sweetalert2";
 import {Col, Container, Row} from "react-bootstrap";
 import {useForm} from "react-hook-form";
 import './PhoneAdd.css';
-import axios from "axios";
-import Swal from "sweetalert2";
+import InputFieldFormAddPhone from "./InputFieldFormAddPhone";
 
 const PhoneAdd = () => {
     const {register, handleSubmit, formState: {errors}} = useForm();
@@ -11,8 +12,8 @@ const PhoneAdd = () => {
     const convertToFormData = (data) => {
         const formNewPhone = new FormData();
         Object.keys({...data, phoneImage: data.phoneImage[0]}).forEach(key => {
-            if (key === 'phoneImage') formNewPhone.append(key, data[key][0])
-            else formNewPhone.append(key, data[key])
+            if (key === 'phoneImage') formNewPhone.append(key, data[key][0]);
+            else formNewPhone.append(key, data[key]);
         });
         return formNewPhone;
     }
@@ -47,14 +48,14 @@ const PhoneAdd = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="phone-add-form">
                 <Row className="justify-content-between p-3">
+
+
                     <Col sm={10} md={4}>
+
                         <div className="phone-add-group">
-                            <label htmlFor="phoneName" className="form-label">Phone name</label>
-                            <input type="text" className="form-control form-control-sm" id="phoneName"
-                                   {...register("phoneName", {required: true})}/>
+                            <InputFieldFormAddPhone id="phoneName" label="Model" register={register}/>
                             {errors.phoneName && <span>Phone name is required</span>}
                         </div>
-
                         <div className="phone-add-group">
                             <label htmlFor="phoneManufacturer" className="form-label">Manufacturer</label>
                             <select className="form-select form-select-sm"
@@ -79,34 +80,24 @@ const PhoneAdd = () => {
 
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneColor" className="form-label">Color</label>
-                            <input type="text" className="form-control form-control-sm" id="phoneColor"
-                                   {...register("phoneColor", {required: true})}/>
+                            <InputFieldFormAddPhone id="phoneColor" label="Color" register={register}/>
                             {errors.phoneColor && <span>Color is required</span>}
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phonePrice" className="form-label">Price (€) </label>
-                            <input type="text" className="form-control form-control-sm" id="phonePrice"
-                                   {...register("phonePrice", {required: true})}/>
+                            <InputFieldFormAddPhone id="phonePrice" label="Price" register={register}/>
                             {errors.phonePrice && <span>Price is required</span>}
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneScreen" className="form-label">Screen </label>
-                            <input type="text" className="form-control form-control-sm" id="phoneScreen"
-                                   {...register("phoneScreen")}/>
+                            <InputFieldFormAddPhone id="phoneScreen" label="Screen" register={register}/>
                         </div>
                     </Col>
 
                     <Col sm={10} md={4}>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneProcessor" className="form-label">Processor</label>
-                            <input type="text" className="form-control form-control-sm" id="phoneProcessor"
-                                   {...register("phoneProcessor")}/>
+                            <InputFieldFormAddPhone id="phoneProcessor" label="Processor" register={register}/>
                         </div>
                         <div className="phone-add-group">
-                            <label htmlFor="phoneRam" className="form-label">RAM</label>
-                            <input type="text" className="form-control form-control-sm" id="phoneRam"
-                                   {...register("phoneRam", {required: true})}/>
+                            <InputFieldFormAddPhone id="phoneRam" label="RAM" register={register}/>
                             {errors.phoneRam && <span>RAM is required</span>}
                         </div>
                         <div className="phone-add-group">
