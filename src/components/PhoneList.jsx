@@ -9,13 +9,14 @@ const PhoneList = (props) => {
 
     const phoneList = props.phoneList;
 
-    const handleDelete = (id) => {
-        deletePhone(id).then();
+    const handleDelete = (id, filename) => {
+        deletePhone(id, filename).then();
     }
 
-    const deletePhone = async (id) => {
+    const deletePhone = async (id, filename) => {
         try {
             await axios.delete('/phone/' + id);
+            await axios.delete('/uploads/' + filename);
             window.location.reload(false);
         } catch (e) {
             await Swal.fire({
@@ -36,7 +37,8 @@ const PhoneList = (props) => {
                             <Card.Img variant="top" src={phone.imageFilePath} alt={phone.name}/>
                             <Card.Body>
                                 <CardPhoneInfo phone={phone}/>
-                                <CardPhoneButtons id={phone.id} handleDelete={handleDelete}/>
+                                <CardPhoneButtons id={phone.id} filename={phone.imageEncryptedFileName}
+                                                  handleDelete={handleDelete}/>
                             </Card.Body>
                         </Card>
                     ) : <h2 className="fw-bold-3">No phones to show</h2>

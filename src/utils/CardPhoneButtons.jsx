@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 const CardPhoneButtons = (props) => {
 
     const id = props.id;
+    const filename = props.filename;
     const handleDelete = props.handleDelete;
 
     return (
@@ -13,7 +14,7 @@ const CardPhoneButtons = (props) => {
                 <Link to={`/phone/${id}`}>
                     <Button variant="dark"><i className="fa-solid fa-circle-info"/></Button>
                 </Link>
-                <Button variant="danger" onClick={() => handleDelete(id)}><i
+                <Button variant="danger" onClick={() => handleDelete(id, filename)}><i
                     className="fa-solid fa-trash-can"/></Button>
             </ButtonToolbar>
         </div>
