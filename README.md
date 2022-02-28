@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# :electron: REACT APP 〰️ Phone Catalog
+> Front-End React app for the application Phone Catalog    
+> Made by Andrea Calvo Moreno
+>
+> This repository contains the front-end code of the "Phone Catalog" application. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## 🎯 Minimum requirements
+   - Home page displays the phone catalog with images
+   - Phones' information retrieved from the API
+   - Phone details are shown in a new page with a few more info about that phone
+   - A spinner component while the REST API is fetching phone info
+   - Responsive design for mobiles
 
-In the project directory, you can run:
+## ➕ App improvements:
+   - Neat styles and use of the CSS3 Flexbox module for a better interface adjustment and adaptation to different platforms.
+   - Use of external libraries: 
+        - Bootstrap version 5 for core body style
+        - SweetAlert version 2 for event notifications
+        - Fontawesome version 6 for icons
+        - Axios for HTTP requests 
+        - React Hook Form for handling forms, input validation and increase performance 
+   - Custom favicon
+   - 404 Not Found page in localhost
+   - Routing implemented to navigate through the app
+   - E2E tests for the "Add phone" form and buttons with Cypress suite
+  - Best practises: 
+       - Code clean-up 
+       - Refactror
+       - Split components
 
-### `npm start`
+## ⚙️ Used Technologies
+▪️`Git` `GitHub` 
+▪️`React` `JavaScript` `CSS3`  
+▪️`Bootstrap 5` `SweetAlert2`  `Fontawesome 6`  `React Hook Form`  `Axios`  
+▪️`Cypress` 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## :octocat: Repositories  
+🔗 [React - Front-End](https://github.com/acalvom/phone-catalog-react) 
+🔗 [Phone Catalog Management](https://github.com/acalvom/phone-catalog-board)   
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏁 Project set-up
 
-### `npm test`
+```sh
+> cd <folder path>
+> git clone https://github.com/acalvom/phone-catalog-react
+> cd phone-catalog-react
+> phone-catalog-react > npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### ▶️ Run REACT APP: `> npm start` 
+#### 🖥️ Open app: Open the browser in  [http://localhost:3000](http://localhost:3000)
+#### 🛠️ Build app: `> npm run build`
+#### ✅ Execute Cypress test: `> npm run e2e-test`
